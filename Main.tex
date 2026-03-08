@@ -1,0 +1,94 @@
+\documentclass[a4paper,twocolumn]{article}
+
+%============================= Packages ================================
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{svg} 
+\usepackage{abstract} 
+\usepackage{booktabs}  
+\usepackage{siunitx}   
+\usepackage{csquotes}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{Bib.bib}
+\usepackage{hyperref} % Hyperlinks in PDF
+\hypersetup{
+    colorlinks = true,
+    allcolors = blue!70!black % Blue link
+}
+
+%============================= Réglages ================================
+\sisetup{table-number-alignment=center}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{20pt}
+
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}
+\definecolor{sorbonneBlue}{RGB}{0,32,91}
+
+%========================= En-têtes =====================
+
+% Pages suivantes
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \lhead{%
+        \parbox[b]{0.8\textwidth}{\small
+        Sorbonne Université - Sciences / Laboratoire de Physique des Plasmas
+        }%
+    }
+    \rhead{\thepage}
+    \renewcommand{\headrulewidth}{0.3pt}
+}
+
+\pagestyle{plain}
+
+%========================= Début du document ===========================
+\begin{document}
+
+%========================= Bloc logo + titre + auteurs =================
+\twocolumn[{
+\noindent
+\noindent
+\includegraphics[height=2.5cm]{Figures/logo.png}\hfill
+\includegraphics[height=2.5cm]{Figures/plaspar.png}
+\vspace{1cm}
+
+
+\begin{minipage}[t]{\textwidth}
+    {\LARGE \bfseries \textcolor{sorbonneBlue}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}\par}
+    \vspace{0.5cm}
+
+    {\large Prenom Nom\textsuperscript{1},  
+    Prenom Nom\textsuperscript{1},  
+    Prenom Nom\textsuperscript{1}\par}
+    \vspace{0.5cm}
+
+    {\small
+    \textsuperscript{1} Laboratoire de Physique des Plasmas, Université Sorbonne Science, Paris, France
+    }
+\end{minipage}
+\vspace{0.5cm}
+}] 
+
+%============================== Contenu =================================
+\input{Abstract}
+\input{Introduction}
+\input{Developpement}
+\input{Conclusion}
+
+%============================== Bibliographie ============================
+\printbibliography
+
+%=========================== Fin du document ============================
+\end{document}
